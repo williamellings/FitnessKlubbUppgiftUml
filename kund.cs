@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace FitnessKlubbUppgiftUml
 {
-    public class kund
+    public class Kund : TrainingClass
     {
         private string Email { get; set; }
         public bool MonthSub { get; set; }
@@ -26,6 +27,17 @@ namespace FitnessKlubbUppgiftUml
             Email = newEmail;
         }
 
+        public void Run()
+        {
+            
 
+            if (MonthSub)
+                Console.WriteLine($"{UserName} som har månadsabonnemang.");
+            else if (YearSub)
+                Console.WriteLine($"{UserName} som har årsabonnemang.");
+            else
+                Console.WriteLine($"{UserName} har inget abonnemang.");
+        }
+        
     }
 }

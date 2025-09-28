@@ -8,9 +8,12 @@
 
             // Skapa objekt
             Trainer Jacob = new Trainer { TrainerName = "Jacob", TypeOfTrainer = "Yoga" }; //den nya tränare och vad han ska träna i 
+            
             Schema yogaSchema = new Schema { Datum = new DateTime(2024, 6, 5) }; //scehmat
-            Kund Sven = new Kund { UserName = "Sven" };
-            Kund Kent = new Kund { UserName = "Kent" }; //nya objekt kunder då både sven og kent
+            
+            Kund Sven = new Kund { UserName = "Sven", MonthSub = true, YearSub = false, };
+
+            Kund Kent = new Kund { UserName = "Kent", MonthSub = false, YearSub = true };//nya objekt kunder då både sven og kent
 
             TrainingClass yogaClass = new TrainingClass
             {
@@ -19,9 +22,14 @@
                 Trainer = Jacob, //tränaren
                 Schema = yogaSchema, // vilket schema
                 Deltagare = new List<Kund> { Sven, Kent } //Vilka deltagare som ska vara med 
+
             };
 
-            yogaClass.ShowUser(); //metod som finns i TrainingClass
+            yogaClass.RunTraining();
+            Sven.Run();
+            Kent.Run();
+            
+            
 
 
         }
