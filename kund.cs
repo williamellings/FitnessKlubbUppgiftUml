@@ -1,0 +1,31 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace FitnessKlubbUppgiftUml
+{
+    public class kund
+    {
+        private string Email { get; set; }
+        public bool MonthSub { get; set; }
+        public bool YearSub { get; set; }
+
+        public string UserName { get; set; }
+
+        public List<TrainingClass> TrainingClass { get; set; } = new List<TrainingClass>();
+
+        public string GetEmail()
+        {
+            return Email;
+        }
+
+        public void SetEmail(string newEmail)
+        {
+            Email = newEmail;
+        }
+
+
+    }
+}
